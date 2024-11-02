@@ -1,15 +1,20 @@
-/*
-console.log("Hello");
-window.alert("This is an alert!");
-document.getElementById("myh1").textContent = "this text in js";
-document.getElementById("myp").textContent = "go pizza?";
+/* INPUT - EASY WAY
+let username;
+
+username = window.prompt("what's your user name?");
+
+console.log(username);
 */
-//this is a comment
 
-let x = "Hello there!";
-let y = 18;
+/* INPUT - PRO WAY // Type conversion
+let userage;
 
-console.log(typeof x);
-console.log(`x equals ${x}`);
+document.getElementById("myButton").onclick = function(){
+    userage = document.getElementById("myInput").value;
+    userage = Number(userage);
+    console.log(userage+1);
+}
+*/
 
-document.getElementById("myp").textContent = `x = ${x} and y = ${y}`;
+const PI = 3.14;
+PI = 10; // error in console
