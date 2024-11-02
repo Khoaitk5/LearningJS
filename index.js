@@ -1,23 +1,21 @@
-// COUNTER PROGRAM
+// Math LIB
 
-const decrease = document.getElementById("decrease");
-const reset = document.getElementById("reset");
-const increase = document.getElementById("increase");
-const countLabel = document.getElementById("countLabel");
+console.log(Math.PI);
+console.log(Math.E);
+console.log(Math.floor(2.5));
+console.log(Math.max(1,2,3));
+console.log(Math.random()); // [0, 1]
+// so many more
 
-let count = 0;
+// RANDOM NUMBER GENERATOR
 
-increase.onclick = function(){
-    count++;
-    countLabel.textContent = count;
-}
+const myButton = document.getElementById("myButton");
+const myLabel = document.getElementById("myLabel")
+const min = 1;
+const max = 6;
+let r;
 
-decrease.onclick = function(){
-    count--;
-    countLabel.textContent = count;
-}
-
-reset.onclick = function(){
-    count = 0;
-    countLabel.textContent = count;
+myButton.onclick = function(){
+    r = Math.floor(Math.random() * max + min);
+    myLabel.textContent = r;
 }
