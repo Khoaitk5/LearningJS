@@ -1,52 +1,21 @@
-// IF STATEMENT
+// STRING METHOD
 
-let isTrue = true;
+let str = "     This is string    ";
 
-if(isTrue){
-    console.log("this is true");
-} else {
-    console.log("this is false");
-}
+str = str.trim();
+/*
+console.log(str.toUpperCase()); //THIS IS STRING
+console.log(str.repeat(2)); //This is stringThis is string
+console.log(str.charAt(3)); //s
+console.log(str.indexOf('I'));//-1
+console.log(str.length); //14
+console.log(str.startsWith("T")); //true
+console.log(str.includes(" ")); //true
+console.log(str.replaceAll(" ", "-"))  //This-is-string
+console.log(str.padStart(17, "/")); // ///This is string
+*/
 
-isTrue ? console.log("is true") : console.log("is false");
-
-// .checked (check box)
-
-const myCheckBox = document.getElementById("myCheckBox");
-const radio1 = document.getElementById("radio1");
-const radio2 = document.getElementById("radio2");
-const radio3 = document.getElementById("radio3");
-const mySubmit = document.getElementById("mySubmit");
-const subRs = document.getElementById("subRs");
-const checkRs = document.getElementById("checkRs");
-
-mySubmit.onclick = function(){
-    if(myCheckBox.checked){
-        subRs.textContent = "check box checked";
-    } else {
-        subRs.textContent = "check box unchecked";
-    }
-
-    if(radio1.checked){
-        checkRs.textContent = "Radio 1";
-    } else if(radio2.checked){
-        checkRs.textContent = "Radio 2";
-    } else if(radio3.checked){
-        checkRs.textContent = "Radio 3";
-    } else {
-        checkRs.textContent = "Radio null";
-    }
-}
-
-let i = 1;
-switch(i){
-    case 1:
-        console.log("one");
-        break;
-    case 2:
-        console.log("two");
-        break;
-    default:
-        console.log("default");
-        break;
-}
+// STRING SLICING
+console.log(str.slice(0,4));
+console.log(str.slice(5));
+console.log(str.slice(-3));
