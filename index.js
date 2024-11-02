@@ -1,21 +1,32 @@
-// STRING METHOD
+// METHOD CHAINING
 
-let str = "     This is string    ";
+let username = "     dang KHOA      ";
 
-str = str.trim();
-/*
-console.log(str.toUpperCase()); //THIS IS STRING
-console.log(str.repeat(2)); //This is stringThis is string
-console.log(str.charAt(3)); //s
-console.log(str.indexOf('I'));//-1
-console.log(str.length); //14
-console.log(str.startsWith("T")); //true
-console.log(str.includes(" ")); //true
-console.log(str.replaceAll(" ", "-"))  //This-is-string
-console.log(str.padStart(17, "/")); // ///This is string
-*/
+username = username.trim().charAt(0).toUpperCase() + username.trim().slice(1).toLowerCase();
 
-// STRING SLICING
-console.log(str.slice(0,4));
-console.log(str.slice(5));
-console.log(str.slice(-3));
+console.log(username)
+
+// LOGICAL OPERATOR
+
+if (!true && true || true){
+    // false
+} else {
+    console.log("true");
+}
+
+// STRICT EQUALITY
+
+let x = 1;
+let y = "1";
+
+if(x == y){
+    console.log("equal value");
+} else {
+    console.log("not equal value");
+}
+
+if(x === y){
+    console.log("equal value & data type");
+} else {
+    console.log("not equal value & data type")
+}
