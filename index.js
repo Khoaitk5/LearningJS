@@ -1,20 +1,23 @@
-/* INPUT - EASY WAY
-let username;
+// COUNTER PROGRAM
 
-username = window.prompt("what's your user name?");
+const decrease = document.getElementById("decrease");
+const reset = document.getElementById("reset");
+const increase = document.getElementById("increase");
+const countLabel = document.getElementById("countLabel");
 
-console.log(username);
-*/
+let count = 0;
 
-/* INPUT - PRO WAY // Type conversion
-let userage;
-
-document.getElementById("myButton").onclick = function(){
-    userage = document.getElementById("myInput").value;
-    userage = Number(userage);
-    console.log(userage+1);
+increase.onclick = function(){
+    count++;
+    countLabel.textContent = count;
 }
-*/
 
-const PI = 3.14;
-PI = 10; // error in console
+decrease.onclick = function(){
+    count--;
+    countLabel.textContent = count;
+}
+
+reset.onclick = function(){
+    count = 0;
+    countLabel.textContent = count;
+}
