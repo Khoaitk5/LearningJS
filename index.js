@@ -1,32 +1,36 @@
-// METHOD CHAINING
+// LOOP
 
-let username = "     dang KHOA      ";
-
-username = username.trim().charAt(0).toUpperCase() + username.trim().slice(1).toLowerCase();
-
-console.log(username)
-
-// LOGICAL OPERATOR
-
-if (!true && true || true){
-    // false
-} else {
-    console.log("true");
+while(true){
+    console.log("while");
+    break;
 }
 
-// STRICT EQUALITY
-
-let x = 1;
-let y = "1";
-
-if(x == y){
-    console.log("equal value");
-} else {
-    console.log("not equal value");
+for(let i = 0; i < 5; i++){
+    console.log(i);
 }
 
-if(x === y){
-    console.log("equal value & data type");
-} else {
-    console.log("not equal value & data type")
+// FUNCTION
+
+function printHello(username){
+    console.log(`Hello ${username}`);
+    return 10;
 }
+
+console.log(printHello("Khoa"));
+
+// VARIABLE SCOPE
+
+let z = 8;
+
+function func1(y){
+    let x = 10;
+    return x + y + z;
+}
+
+function func2(y){
+    let x = 5.5;
+    return x + y + z;
+}
+
+console.log(func1(2));
+console.log(func2(5));
