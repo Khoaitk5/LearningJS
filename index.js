@@ -1,36 +1,20 @@
-// LOOP
+// TEMPERATURE CONVERSION PROGRAM
 
-while(true){
-    console.log("while");
-    break;
+const input = document.getElementById("input");
+const ctof = document.getElementById("ctof");
+const ftoc = document.getElementById("ftoc");
+const result = document.getElementById("result");
+
+function convert(){
+    if(ctof.checked){
+        let tem = Number(input.value);
+        tem = tem * 9 / 5 + 32;
+        result.textContent = tem.toFixed(1) + "°F";
+    } else if(ftoc.checked){
+        let tem = Number(input.value);
+        tem = (tem - 32) * (5 / 9);
+        result.textContent = tem.toFixed(1) + "°C";
+    } else{
+        result.textContent = "select a unit";
+    }
 }
-
-for(let i = 0; i < 5; i++){
-    console.log(i);
-}
-
-// FUNCTION
-
-function printHello(username){
-    console.log(`Hello ${username}`);
-    return 10;
-}
-
-console.log(printHello("Khoa"));
-
-// VARIABLE SCOPE
-
-let z = 8;
-
-function func1(y){
-    let x = 10;
-    return x + y + z;
-}
-
-function func2(y){
-    let x = 5.5;
-    return x + y + z;
-}
-
-console.log(func1(2));
-console.log(func2(5));

@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <form>
+        <h1>Temperary Conversion</h1>
+        <input type="number" id="input" value="0"><br>
+        <input type="radio" id="ctof" name="unit">
+        <label for="ctof"> C -> F</label><br>
+        <input type="radio" id="ftoc" name="unit">
+        <label for="ftoc"> F -> C</label><br>
+
+        <button type="button" onclick="convert()">Submit</button>
+        <p id="result"></p>
+    </form>
+
     <script src="index.js"></script>
 </body>
 </html>
