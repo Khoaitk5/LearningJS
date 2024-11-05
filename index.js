@@ -15,8 +15,7 @@ function bye(){
 //array.forEach(callback)
 
 let numbers = [1, 2, 3, 4, 5];
-
-numbers.forEach(display);
+//numbers.forEach(display);
 
 function display(elements){
     console.log(elements);
@@ -26,8 +25,28 @@ function display(elements){
 //accept a callback and applies this function
 
 let squares = numbers.map(square);
-squares.forEach(display);
+//squares.forEach(display);
 
 function square(element){
     return Math.pow(element, 2);
+}
+
+//.filter()
+//filtering
+
+let evenNumbers = numbers.filter(isEven);
+evenNumbers.forEach(display);
+
+function isEven(element){
+    return element % 2 == 0;
+}
+
+//.reduce()
+//reduce all array to single value
+
+let sumOfNumbers = numbers.reduce(sum);
+console.log(sumOfNumbers);
+
+function sum(accumulator, element){
+    return accumulator + element;
 }
