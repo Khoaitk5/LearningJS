@@ -1,20 +1,44 @@
-// TEMPERATURE CONVERSION PROGRAM
+// ARRAY
 
-const input = document.getElementById("input");
-const ctof = document.getElementById("ctof");
-const ftoc = document.getElementById("ftoc");
-const result = document.getElementById("result");
+let fruits = ["apple", "orange", "banana"];
 
-function convert(){
-    if(ctof.checked){
-        let tem = Number(input.value);
-        tem = tem * 9 / 5 + 32;
-        result.textContent = tem.toFixed(1) + "°F";
-    } else if(ftoc.checked){
-        let tem = Number(input.value);
-        tem = (tem - 32) * (5 / 9);
-        result.textContent = tem.toFixed(1) + "°C";
-    } else{
-        result.textContent = "select a unit";
-    }
+fruits.push("coconut"); //push last
+fruits.pop(); //pop last
+fruits.unshift("mango"); //push first
+fruits.shift(); //pop first
+
+console.log(fruits);
+console.log(fruits[0]);
+
+console.log(fruits.length);
+console.log(fruits.indexOf("banana"));
+
+for(let fruit of fruits){
+    console.log(fruit);
 }
+
+fruits.sort().reverse(); //sorting & reverse
+
+//SPREAD OPERATOR (...spread)
+//spread operator = opening/unpacking the box/array
+
+let numbers = [1, 2, 3, 4, 5];
+
+console.log(Math.max(numbers)); // no spread
+console.log(Math.max(...numbers)); // spread
+
+let username = "hello world";
+console.log([...username].join("-"));
+
+let fruits2 = ["carrot", "strawberry"];
+let foods = [...fruits, ...fruits2];
+console.log(foods);
+
+//REST PARAMETERS (...rest)
+//rest = packing the box
+
+function openBox(...items){
+    console.log(items);
+}
+
+openBox("toy", "lego", "watch");
