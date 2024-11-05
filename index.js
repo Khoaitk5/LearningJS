@@ -1,44 +1,37 @@
-// ARRAY
+//RANDOM PASSWORD GENERATOR
 
-let fruits = ["apple", "orange", "banana"];
+function generatePassword(length, lower, upper, number, symbol){
+    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+    const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numberChars = "1234567890";
+    const symbolChars = "!@#$%^&*";
 
-fruits.push("coconut"); //push last
-fruits.pop(); //pop last
-fruits.unshift("mango"); //push first
-fruits.shift(); //pop first
+    let allowedChars = "";
+    let password = "";
 
-console.log(fruits);
-console.log(fruits[0]);
+    allowedChars += includeLowerCase ? lowercaseChars : "";
+    allowedChars += includeUpperCase ? uppercaseChars : "";
+    allowedChars += includeNumbers ? numberChars : "";
+    allowedChars += includeSymbols ? symbolChars : "";
 
-console.log(fruits.length);
-console.log(fruits.indexOf("banana"));
+    if(length < 1 && allowedChars.length < 1){
+        console.log("password can not generated");
+    }
 
-for(let fruit of fruits){
-    console.log(fruit);
+    while(password.length < length){
+        const randomIndex = Math.floor(Math.random() * allowedChars.length);
+        password += allowedChars[randomIndex];
+    }
+
+    return password;
 }
 
-fruits.sort().reverse(); //sorting & reverse
+const passwordLength = 12;
+const includeLowerCase = true;
+const includeUpperCase = true;
+const includeNumbers = true;
+const includeSymbols = true;
 
-//SPREAD OPERATOR (...spread)
-//spread operator = opening/unpacking the box/array
+const password = generatePassword(passwordLength, includeLowerCase, includeUpperCase, includeNumbers, includeSymbols);
 
-let numbers = [1, 2, 3, 4, 5];
-
-console.log(Math.max(numbers)); // no spread
-console.log(Math.max(...numbers)); // spread
-
-let username = "hello world";
-console.log([...username].join("-"));
-
-let fruits2 = ["carrot", "strawberry"];
-let foods = [...fruits, ...fruits2];
-console.log(foods);
-
-//REST PARAMETERS (...rest)
-//rest = packing the box
-
-function openBox(...items){
-    console.log(items);
-}
-
-openBox("toy", "lego", "watch");
+console.log(`Generated password: ${password}`);
