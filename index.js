@@ -1,37 +1,33 @@
-//RANDOM PASSWORD GENERATOR
+//CALL BACK
+// call another function right after finish current function
+hello(bye);
 
-function generatePassword(length, lower, upper, number, symbol){
-    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
-    const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const numberChars = "1234567890";
-    const symbolChars = "!@#$%^&*";
-
-    let allowedChars = "";
-    let password = "";
-
-    allowedChars += includeLowerCase ? lowercaseChars : "";
-    allowedChars += includeUpperCase ? uppercaseChars : "";
-    allowedChars += includeNumbers ? numberChars : "";
-    allowedChars += includeSymbols ? symbolChars : "";
-
-    if(length < 1 && allowedChars.length < 1){
-        console.log("password can not generated");
-    }
-
-    while(password.length < length){
-        const randomIndex = Math.floor(Math.random() * allowedChars.length);
-        password += allowedChars[randomIndex];
-    }
-
-    return password;
+function hello(callback){
+    console.log("Hello");
+    callback();
 }
 
-const passwordLength = 12;
-const includeLowerCase = true;
-const includeUpperCase = true;
-const includeNumbers = true;
-const includeSymbols = true;
+function bye(){
+    console.log("Bye");
+}
 
-const password = generatePassword(passwordLength, includeLowerCase, includeUpperCase, includeNumbers, includeSymbols);
+//FOR EACH
+//array.forEach(callback)
 
-console.log(`Generated password: ${password}`);
+let numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach(display);
+
+function display(elements){
+    console.log(elements);
+}
+
+//.map()
+//accept a callback and applies this function
+
+let squares = numbers.map(square);
+squares.forEach(display);
+
+function square(element){
+    return Math.pow(element, 2);
+}
